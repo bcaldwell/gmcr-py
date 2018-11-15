@@ -44,10 +44,11 @@ class FrameTemplate(Frame):
             mainWindow.contentFrame.currFrame = self
 
         mainWindow.frameBtnCmds.append(onClick)
+        print("here")
 
         self.button = ttk.Button(buttonMaster, text=self.buttonLabel,
                                  image=self.inactiveIcon, compound="top",
-                                 width=20, command=lambda: onClick())
+                                 width=9, command=lambda: onClick())
         self.button.grid(column=len(mainWindow.frameBtnList), row=0,
                          sticky=NSEW)
         return self.button

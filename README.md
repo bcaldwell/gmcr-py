@@ -8,3 +8,8 @@ Model implemented in python/numpy, with a tkinter GUI.
 _compatible with Python 3.2+, numpy 1.7+_
 
 Developed with support from Rami Kinsara, Keith Hipel, and Marc Kilgour
+
+### Mac Build
+```
+python3 mac-build.py py2app
+```
