@@ -13,6 +13,7 @@ from data_01_conflictModel import ConflictModel
 from visualizerLauncher import launchVis
 from distutils.dir_util import copy_tree
 import os
+import tempfile
 
 NSEW = (N, S, E, W)
 
@@ -451,8 +452,9 @@ class Exporter(ttk.Frame):
 
     def loadVis(self, event=None):
         """Launch visualization in browser."""
-        copy_tree('gmcr-vis', os.environ['TEMP'] + '/gmcr-vis', update=True)
-        self.owner.sol.saveJSON(os.environ['TEMP'] +
+        tempDir = tempfile.gettempdir()
+        copy_tree('gmcr-vis', tempDir + '/gmcr-vis', update=True)
+        self.owner.sol.saveJSON(tempDir +
                                 '/gmcr-vis/json/conflictData.json')
         launchVis()
 

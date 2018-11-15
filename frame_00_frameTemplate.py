@@ -44,7 +44,6 @@ class FrameTemplate(Frame):
             mainWindow.contentFrame.currFrame = self
 
         mainWindow.frameBtnCmds.append(onClick)
-        print("here")
 
         self.button = ttk.Button(buttonMaster, text=self.buttonLabel,
                                  image=self.inactiveIcon, compound="top",

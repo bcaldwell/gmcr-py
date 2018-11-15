@@ -3,6 +3,7 @@ import sys
 from multiprocessing import Process
 import http.server
 import os
+import tempfile
 
 
 class Fakestd(object):
@@ -19,11 +20,11 @@ def serve():
     sys.stdout = Fakestd()
 
     # move to the temp folder where the visualizer files were copied
-    os.chdir(os.environ['TEMP'] + '/gmcr-vis')
+    os.chdir(tempfile.gettempdir() + '/gmcr-vis')
 
     PORT = 8000
     Handler = http.server.SimpleHTTPRequestHandler
-    httpd = http.server.HTTPServer(("", PORT), Handler)
+    httpd = http.server.HTTPServer(("0.0.0.0", PORT), Handler)
     print("now serving on port ", PORT)
     httpd.serve_forever()
 
