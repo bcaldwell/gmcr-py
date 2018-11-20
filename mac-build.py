@@ -6,10 +6,10 @@ Usage:
 from setuptools import setup
 
 APP = ['a_Main_Window.py']
-DATA_FILES = ['icons', 'test_data', 'Examples']
+DATA_FILES = ['icons', 'test_data', 'Examples', "gmcr-vis"]
 APP_NAME = "GMCR+"
 OPTIONS = {
-  'argv_emulation': True,
+  'argv_emulation': False, #required to launch on forground
   'iconfile': 'gmcr.ico',
       'plist': {
         'CFBundleName': APP_NAME,
